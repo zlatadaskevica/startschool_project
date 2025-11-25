@@ -31,3 +31,15 @@
             console.error('Something went wrong!', error);
         });
 }
+
+function getRandomJoke() { // Define the function
+    fetch('https://official-joke-api.appspot.com/jokes/random')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data); // You'll likely want to display this on the page
+            document.getElementById('result').innerHTML = `${data.setup}`
+        })
+        .catch(error => {
+            console.error('Something went wrong!', error);
+        });
+}
