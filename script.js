@@ -20,12 +20,12 @@
             console.error('Something went wrong!', error);
         });
 }
- function getRandomUser() { // Define the function
-    fetch('https://api.noctuasky.com/api/v1/skysources/name/str')
+ function getRandomWord() { // Define the function
+    fetch('https://random-word-api.vercel.app/api?words=1')
         .then(response => response.json())
         .then(data => {
             console.log(data); // You'll likely want to display this on the page
-            document.getElementById('result').innerHTML = `${data.message}`;
+            document.getElementById('result').innerHTML = `${data.word}`;
         })
         .catch(error => {
             console.error('Something went wrong!', error);

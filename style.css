@@ -3,9 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root {
+    --color-primary: #667eea;
+    --color-secondary: #764ba2;
+    --color-accent: #ffd166;
+    --font-sans: "Inter", Arial, sans-serif;
+}
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-sans);
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     padding: 20px;
@@ -21,7 +27,10 @@ body {
 }
 
 h1 {
-    color: #333;
+    background: var(--color-primary);
+    color: #fff;              /* ensure text contrasts with background */
+    padding: 18px 20px;       /* give h1 visible area */
+    border-radius: 10px;
     text-align: center;
     margin-bottom: 10px;
 }
@@ -37,6 +46,7 @@ p {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     margin-bottom: 30px;
+    
 }
 
 button {
@@ -44,16 +54,15 @@ button {
     font-size: 16px;
     border: none;
     border-radius: 10px;
-    background: #667eea;
-    color: white;
+    background: var(--color-secondary);   /* use the root variable */
+    color: rgb(250, 249, 249);
     cursor: pointer;
     transition: all 0.3s;
 }
 
 button:hover {
-    background: #5568d3;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    
 }
 
 button:active {
@@ -77,7 +86,7 @@ button:active {
     padding: 30px;
     border-radius: 15px;
     min-height: 200px;
-    display: none;
+    
 }
 
 .result.show {
