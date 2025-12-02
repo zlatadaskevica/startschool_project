@@ -6,8 +6,9 @@
 :root {
     --color-primary: #667eea;
     --color-secondary: #764ba2;
-    --color-accent: #ffd166;
+    --color-accent: #d0b128;
     --font-sans: "Inter", Arial, sans-serif;
+    --gap: 20px;
 }
 
 body {
@@ -44,7 +45,7 @@ p {
 .buttons {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: var(--gap);
     margin-bottom: 30px;
     
 }
@@ -67,6 +68,12 @@ button:hover {
 
 button:active {
     transform: translateY(0);
+}
+
+button:focus,
+button:focus-visible {
+    box-shadow: 0 0 0 10px rgba(2, 8, 26, 0.25);
+    outline: none;
 }
 
 .loading {
